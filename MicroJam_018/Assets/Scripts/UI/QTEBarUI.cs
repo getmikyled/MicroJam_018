@@ -9,6 +9,7 @@ public class QTEBarUI : MonoBehaviour
     [SerializeField] private KeyCode _qteKey;
 
     [SerializeField] private float _decreaseSpeed = 2f;
+    [SerializeField] private float _finishedRepDecreaseSpeed = 120f;
     [SerializeField] private float _increaseAmount = 5f;
     [SerializeField] private int _repCount = 8;
     [SerializeField] private float _repTimerDuration = 1.25f;
@@ -26,10 +27,10 @@ public class QTEBarUI : MonoBehaviour
 
     private float repTimeElapsed = 0f;
     private int currentRepCount = 0;
+
+    private bool barDecreasing = false;
     
     private const string REP_TEXT = " REPS!";
-    
-    private
 
     private void Start()
     {
@@ -48,7 +49,7 @@ public class QTEBarUI : MonoBehaviour
 
     private void UpdateRepTimer()
     {
-        // Update rep timer
+        /*// Update rep timer
         float barPositionX = _barUI.anchoredPosition.x + halfBarWidth;
         if (barPositionX >= minimumRepPosition)
         {
@@ -66,29 +67,50 @@ public class QTEBarUI : MonoBehaviour
         else
         {
             repTimeElapsed = 0f;
-        }
+        }*/
     }
     
     private void UpdateBarPosition()
     {
-        float newXPosition = _barUI.anchoredPosition.x;
-        // Check for input
-        if (Input.GetKeyDown(_qteKey))
+        if (barDecreasing)
         {
-            // If input is pressed, bar gains progress
-            newXPosition += _increaseAmount;
+            float newXPosition = _barUI.anchoredPosition.x - (_finishedRepDecreaseSpeed * Time.deltaTime);
+            if (newXPosition <= minXPosition)
+            {
+                barDecreasing = false;
+            }
+            
+            newXPosition = Mathf.Max(newXPosition, minXPosition);
+
+            _barUI.anchoredPosition = new Vector2(newXPosition, _barUI.anchoredPosition.y);
         }
         else
         {
-            // If there is no input, bar loses progress
-            newXPosition -= (_decreaseSpeed * Time.deltaTime);
+            float newXPosition = _barUI.anchoredPosition.x;
+            // Check for input
+            if (Input.GetKeyDown(_qteKey))
+            {
+                // If input is pressed, bar gains progress
+                newXPosition += _increaseAmount;
+
+                if (newXPosition >= maxXPosition)
+                {
+                    AddRepCount();
+                    barDecreasing = true;
+                }
+            }
+            else
+            {
+                // If there is no input, bar loses progress
+                newXPosition -= (_decreaseSpeed * Time.deltaTime);
+            }
+        
+            // Clamp newXPosition
+            newXPosition = Mathf.Min(newXPosition, maxXPosition);
+            newXPosition = Mathf.Max(newXPosition, minXPosition);
+        
+            _barUI.anchoredPosition = new Vector2(newXPosition, _barUI.anchoredPosition.y);
         }
-        
-        // Clamp newXPosition
-        newXPosition = Mathf.Min(newXPosition, maxXPosition);
-        newXPosition = Mathf.Max(newXPosition, minXPosition);
-        
-        _barUI.anchoredPosition = new Vector2(newXPosition, _barUI.anchoredPosition.y);
     }
 
     private void AddRepCount(int count = 1)
