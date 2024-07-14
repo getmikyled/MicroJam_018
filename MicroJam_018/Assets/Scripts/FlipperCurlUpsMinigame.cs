@@ -16,7 +16,7 @@ public class FlipperCurlUpsMinigame : MonoBehaviour
     [SerializeField] private int _minEnemyRepCount = 4;
     [SerializeField] private int _maxEnemyRepCount = 8;
 
-    private int roundNum = 1;
+    private int roundNum = 0;
     private int roundsWon = 0;
     private bool roundStarted = false;
     private float minigameTimeElapsed = 0f;
@@ -42,8 +42,8 @@ public class FlipperCurlUpsMinigame : MonoBehaviour
 
     public void StartRound()
     {
-        StartCoroutine(PlayNewRoundUI());
         roundNum++;
+        StartCoroutine(PlayNewRoundUI());
     }
 
     public IEnumerator PlayNewRoundUI()
@@ -71,6 +71,8 @@ public class FlipperCurlUpsMinigame : MonoBehaviour
             roundsWon++;
         }
 
+        Debug.Log("ROUND NUM: " + roundNum);
+        Debug.Log("ROUNDS WON: " + roundsWon);
         if (roundsWon == 2)
         {
             // PLAYER WON
