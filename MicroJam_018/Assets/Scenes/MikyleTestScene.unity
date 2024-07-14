@@ -464,6 +464,11 @@ PrefabInstance:
       propertyPath: _increaseAmount
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 1459029933955075583, guid: 42c02cf6b1da65948b5e015f3b09024c,
+        type: 3}
+      propertyPath: _finishedRepDecreaseSpeed
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 2763425607617312226, guid: 42c02cf6b1da65948b5e015f3b09024c,
         type: 3}
       propertyPath: m_IsActive

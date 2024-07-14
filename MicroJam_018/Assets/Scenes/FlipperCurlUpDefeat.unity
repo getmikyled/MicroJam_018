@@ -11395,6 +11395,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2188898383362299867, guid: b558edc9498210144ac889beb74ee5d4,
+        type: 3}
+      propertyPath: m_text
+      value: Play Again
+      objectReference: {fileID: 0}
     - target: {fileID: 2950963157229066441, guid: b558edc9498210144ac889beb74ee5d4,
         type: 3}
       propertyPath: _restartScene
@@ -11409,6 +11414,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DefeatScreenUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4445340016991980128, guid: b558edc9498210144ac889beb74ee5d4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -88.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4991368306019873770, guid: b558edc9498210144ac889beb74ee5d4,
+        type: 3}
+      propertyPath: m_text
+      value: Main Menu
       objectReference: {fileID: 0}
     - target: {fileID: 6295144864652615122, guid: b558edc9498210144ac889beb74ee5d4,
         type: 3}
@@ -11515,13 +11530,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8145346714070615696, guid: b558edc9498210144ac889beb74ee5d4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -23.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8238643068840602140, guid: b558edc9498210144ac889beb74ee5d4,
         type: 3}
       propertyPath: m_Name
       value: DefeatText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8659689895578774346, guid: b558edc9498210144ac889beb74ee5d4, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b558edc9498210144ac889beb74ee5d4, type: 3}
