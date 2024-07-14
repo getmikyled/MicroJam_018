@@ -103,6 +103,19 @@ public class CircleQTE : MonoBehaviour
         //Make speed random
         float newSpeed = Random.Range(0.45f, 0.65f); 
         shrinkSpeed = newSpeed;
+
+        //Create new location
+        float newXPosition = Random.Range(-250f, 250f); 
+        float newYPosition = Random.Range(-60f, 60f); 
+        print(newXPosition);
+        print(newYPosition);
+
+        //Create a new Vector3 with the desired x and y positions, keeping the current z position
+        Vector3 newPosition = new Vector3(newXPosition, newYPosition, transform.position.z);
+
+        //Assign the new position to the object's transform
+        transform.position = newPosition;
+        
         isShrinking = true;
 
 
