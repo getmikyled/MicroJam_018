@@ -92,11 +92,13 @@ public class FlipperCurlUpsMinigame : MonoBehaviour
 
     private void LoadVictoryScene()
     {
-        SceneManager.LoadScene("FlipperCurlUpVictory");
+        //SceneManager.LoadScene("FlipperCurlUpVictory");
+        SceneManager.LoadScene("IceBergVictoryScreen");
     }
 
     private void LoadDefeatScene()
     {
-        SceneManager.LoadScene("FlipperCurlUpDefeat");
+        //SceneManager.LoadScene("FlipperCurlUpDefeat");
+        SceneManager.LoadScene("IceBergFailScreen");
     }
 }
