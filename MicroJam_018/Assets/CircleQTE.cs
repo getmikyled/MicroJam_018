@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class CircleQTE : MonoBehaviour
 {
-    public float shrinkSpeed = 0.1f; // Speed at which the image shrinks
+    public float shrinkSpeed = 0.4f; // Speed at which the image shrinks
     public float minScale = 0.1f; // Minimum scale for all axes
 
     private RectTransform largeCircle;
-    private bool isShrinking = true;
+    private bool isShrinking = false;
+
+    //The Manager
+    public CircleSceneManager circleManager;
 
     // Start is called before the first frame update
     void Start()
@@ -34,12 +37,15 @@ public class CircleQTE : MonoBehaviour
     void Update()
     {
         // Stop Shrinking
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (isShrinking && Input.GetKeyDown(KeyCode.Space))
         {
             isShrinking = false;
-            float localScale = largeCircle.localScale;
+            float localScale = largeCircle.localScale.x;
 
             //If the scale is between 0.65 and 0.5, the circle is perfect.
+            if(localScale <= 0.655 && localScale >= 0.495){
+                print("PERFECT!");
+            }
             
         }
 
@@ -57,6 +63,23 @@ public class CircleQTE : MonoBehaviour
         }
 
         // Example: Get and print the scale of the large circle
-        Debug.Log("Scale of LargeCircle: " + largeCircle.localScale);
+        //Debug.Log("Scale of LargeCircle: " + largeCircle.localScale);
+    }
+
+
+    public void createQTE(){
+
+        print("Created!");
+        //Reset the scaling
+        //Pick random number for scaling and speed
+        float newScale = Random.Range(0.9f, 1.3f); 
+        largeCircle.localScale = new Vector3(newScale, newScale, newScale);
+
+
+        //Make speed random
+        float newSpeed = Random.Range(0.5f, 0.8f); 
+        isShrinking = true;
+
+
     }
 }
