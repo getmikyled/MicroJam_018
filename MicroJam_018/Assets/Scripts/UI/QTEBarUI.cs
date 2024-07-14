@@ -26,7 +26,7 @@ public class QTEBarUI : MonoBehaviour
     private float maxXPosition;
 
     private float repTimeElapsed = 0f;
-    private int currentRepCount = 0;
+    public int currentRepCount = 0;
 
     private bool barDecreasing = false;
     
@@ -45,6 +45,12 @@ public class QTEBarUI : MonoBehaviour
     {
         UpdateBarPosition();
         UpdateRepTimer();
+    }
+
+    public void ResetQTE()
+    {
+        _barUI.anchoredPosition = new Vector2(-289f, _barUI.anchoredPosition.y);
+        currentRepCount = 0;
     }
 
     private void UpdateRepTimer()
@@ -122,7 +128,6 @@ public class QTEBarUI : MonoBehaviour
 
     private void UpdateRepCountUI()
     {
-        Debug.Log("Updated Rep Count UI");
         _repCounter.text = currentRepCount + REP_TEXT;
         _animator.Play("UpdateRep");
     }

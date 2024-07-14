@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/MainMenu.unity
+    guid: 41a5d1fdeb51314449b95cc7870aee5f
+  - enabled: 1
+    path: Assets/Scenes/FlipperCurlUp.unity
+    guid: 5f665e5f5a2efad4fa2d6b0c7106298e
+  - enabled: 1
+    path: Assets/Scenes/FlipperCurlUpVictory.unity
+    guid: 445c1f619cf844d4782ac291512cd69c
+  - enabled: 1
+    path: Assets/Scenes/FlipperCurlUpDefeat.unity
+    guid: 76a8ec0013d1df744a2822cf2157962a
+  - enabled: 1
+    path: Assets/Scenes/IceBergPunchOut.unity
+    guid: 639806466f8e2ab4d84ca46e8c8fa453
   m_configObjects: {}
