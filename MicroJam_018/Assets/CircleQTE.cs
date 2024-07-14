@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CircleQTE : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class CircleQTE : MonoBehaviour
     public float minScale = 0.1f; // Minimum scale for all axes
 
     private RectTransform largeCircle;
+    private Image victoryCircle;
+    private Image failureCircle;
     private bool isShrinking = false;
 
     //The Manager
@@ -31,6 +34,14 @@ public class CircleQTE : MonoBehaviour
         {
             Debug.LogError("RectTransform component not found on LargeCircle object!");
         }
+
+        //Get the victory and failure circles
+        victoryCircle = transform.Find("VictoryCircle").GetComponent<Image>();
+        failureCircle = transform.Find("FailureCircle").GetComponent<Image>();
+
+        if(victoryCircle == null || failureCircle == null){
+            Debug.LogError("Could not find the circles!");
+        }
     }
 
     // Update is called once per frame
@@ -45,7 +56,14 @@ public class CircleQTE : MonoBehaviour
             //If the scale is between 0.65 and 0.5, the circle is perfect.
             if(localScale <= 0.655 && localScale >= 0.495){
                 print("PERFECT!");
+                victoryCircle.enabled = true;
+                failureCircle.enabled = false;
+            }else{
+                print("FAILED");
+                victoryCircle.enabled = false;
+                failureCircle.enabled = true;
             }
+            print(localScale);
             
         }
 
@@ -69,15 +87,20 @@ public class CircleQTE : MonoBehaviour
 
     public void createQTE(){
 
+        //Reset the victory/failure
+        victoryCircle.enabled = false;
+        failureCircle.enabled = false;
+
         print("Created!");
         //Reset the scaling
         //Pick random number for scaling and speed
-        float newScale = Random.Range(0.9f, 1.3f); 
+        float newScale = Random.Range(1.0f, 1.6f); 
         largeCircle.localScale = new Vector3(newScale, newScale, newScale);
 
 
         //Make speed random
-        float newSpeed = Random.Range(0.5f, 0.8f); 
+        float newSpeed = Random.Range(0.45f, 0.65f); 
+        shrinkSpeed = newSpeed;
         isShrinking = true;
 
 
