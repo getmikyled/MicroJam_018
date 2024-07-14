@@ -58,10 +58,12 @@ public class CircleQTE : MonoBehaviour
                 print("PERFECT!");
                 victoryCircle.enabled = true;
                 failureCircle.enabled = false;
+                circleManager.QTEDone(1);
             }else{
                 print("FAILED");
                 victoryCircle.enabled = false;
                 failureCircle.enabled = true;
+                circleManager.QTEDone(0);
             }
             print(localScale);
             

@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IceBergPunchOut.unity
     guid: 639806466f8e2ab4d84ca46e8c8fa453
+  - enabled: 1
+    path: Assets/Scenes/IceBergVictoryScreen.unity
+    guid: 9abb1d30e286e67458c64422d1b8b14e
   m_configObjects: {}
