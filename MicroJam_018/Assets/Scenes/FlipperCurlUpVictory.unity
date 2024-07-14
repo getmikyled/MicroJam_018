@@ -11531,7 +11531,7 @@ PrefabInstance:
     - target: {fileID: 2188898383362299867, guid: b558edc9498210144ac889beb74ee5d4,
         type: 3}
       propertyPath: m_text
-      value: Restart
+      value: Play Again
       objectReference: {fileID: 0}
     - target: {fileID: 2950963157229066441, guid: b558edc9498210144ac889beb74ee5d4,
         type: 3}
@@ -11551,7 +11551,7 @@ PrefabInstance:
     - target: {fileID: 4445340016991980128, guid: b558edc9498210144ac889beb74ee5d4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -107.4
+      value: -88.8
       objectReference: {fileID: 0}
     - target: {fileID: 4991368306019873770, guid: b558edc9498210144ac889beb74ee5d4,
         type: 3}
@@ -11661,7 +11661,7 @@ PrefabInstance:
     - target: {fileID: 8145346714070615696, guid: b558edc9498210144ac889beb74ee5d4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -40.1
+      value: -23.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
