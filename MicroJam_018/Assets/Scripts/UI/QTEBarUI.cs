@@ -19,6 +19,7 @@ public class QTEBarUI : MonoBehaviour
     [SerializeField] private RectTransform _barUI;
     [SerializeField] private RectTransform _barMinimumRepMarker;
     [SerializeField] private TextMeshProUGUI _repCounter;
+    [SerializeField] private AlembicController alembic;
 
     private float halfBarWidth;
     private float minimumRepPosition;
@@ -122,7 +123,7 @@ public class QTEBarUI : MonoBehaviour
     private void AddRepCount(int count = 1)
     {
         currentRepCount += count;
-
+        alembic.repUpdate();
         UpdateRepCountUI();
     }
 
