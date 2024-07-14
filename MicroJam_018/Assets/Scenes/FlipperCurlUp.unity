@@ -11907,18 +11907,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1459029933955075583, guid: 42c02cf6b1da65948b5e015f3b09024c,
         type: 3}
+      propertyPath: _repCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1459029933955075583, guid: 42c02cf6b1da65948b5e015f3b09024c,
+        type: 3}
       propertyPath: _decreaseSpeed
       value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 1459029933955075583, guid: 42c02cf6b1da65948b5e015f3b09024c,
         type: 3}
       propertyPath: _increaseAmount
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 1459029933955075583, guid: 42c02cf6b1da65948b5e015f3b09024c,
         type: 3}
       propertyPath: _finishedRepDecreaseSpeed
-      value: 400
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 2598123171913670665, guid: 42c02cf6b1da65948b5e015f3b09024c,
         type: 3}
